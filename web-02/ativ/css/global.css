@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+body {
+    background: url(../images/backgroud.png);
+    background-attachment: fixed;
+    font-family: 'Special Elite', cursive;
+    background-size: cover;
+
+    font-size: 16px;
+
+    margin: 1px;
+    padding: 1px;
+
+    align-items: center;
+}

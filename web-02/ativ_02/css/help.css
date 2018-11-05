@@ -1,0 +1,81 @@
+.container-help{
+
+    width: 95%;
+    height: 25rem;
+
+    position: fixed;
+
+    margin: 0 2.5%;
+    margin-top: 5rem;
+
+    background: url(../images/dados.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+
+    width: 60%;
+
+    margin: 0 20%;
+
+    align-items: center;
+}
+
+.title{
+    
+    width: 80%;
+    margin: 1rem 10%;
+
+    text-align: center;
+}
+
+.message{
+
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 3rem;
+}
+
+.text{
+    text-align: center;
+
+    line-height: 1.5;
+}
+
+.container-back{
+    
+    position: fixed;
+
+    width: 80%;
+    margin: 0 10%;
+    margin-top: 40rem;
+
+    align-items: center;
+}
+
+.back-button{
+
+    width: 40%;
+    height: 3rem;
+
+    background: url(../images/botões.png);
+    background-size: cover;
+    background-position: center;
+
+    margin: 0 30%;
+
+    display: flex;
+
+    align-items: center;   
+
+}
+
+.back{
+
+    text-align: center;
+    
+    width: 90%;
+
+    margin: 0 5%;
+}

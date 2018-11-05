@@ -1,0 +1,46 @@
+body{
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.text{
+    font-size: 1.3rem;
+    text-align: center;
+    width: 80%;
+    margin: 0 10%;
+    line-height: 2;
+}
+
+.container{
+    width: 90%;
+    height: 30rem;
+    margin: auto 5%;
+    background: url(../images/dados.png);
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+
+    margin-top: 2rem;
+}
+
+.back_button{
+    width: 40%;
+    height: 4rem;
+
+    margin: 0 30%;
+    margin-top: 35rem;
+    position: fixed;
+
+    background: url(../images/botões.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.back{
+    margin-top: 2rem;
+}

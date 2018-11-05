@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+.container {
+    width: 80%;
+    align-items: center;
+    margin: 50% 10% 0 10%;
+}
+
+.title{
+    text-align: center;
+    color: #F0F8FF;
+    font-size: 1.2rem;
+}
+
+.options{
+    display: block;
+    align-items: center;
+    text-align: center;
+}
+
+.buttons{
+    width: 60%;
+    height: 3.5rem;
+    margin: 1.5rem;
+    border-radius: 10%;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.2rem;
+}

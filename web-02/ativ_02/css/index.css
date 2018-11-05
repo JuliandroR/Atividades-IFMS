@@ -1,0 +1,49 @@
+.header {
+    width: 100%;
+
+    position: fixed;
+    margin: 5rem auto 0 auto;
+
+    align-items: center;
+}
+
+.title {
+    width: 90%;
+
+    text-align: center;
+}
+
+.options {
+    position: fixed;
+
+    width: 100%;
+
+    margin: 12rem auto 0 auto;
+
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    width: 40%;
+    height: 3rem;
+
+    background: rgba(222, 184, 135, 0.5);
+    border-radius: 10%;
+
+    margin: 2rem 30% 0 30%;
+    ;
+
+    align-items: center;
+}
+
+.description {
+    width: 90%;
+    margin: 0 5%;
+
+    text-align: center;
+
+    margin-top: 1rem;
+}

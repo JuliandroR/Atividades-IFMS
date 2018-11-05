@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+body {
+    background: url(../images/backgroud.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    font-family: 'Special Elite';
+
+    padding: 0;
+    margin: 0;
+}
+
+
+.image-results {
+    height: 10rem;
+    width: 10rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.message-results {
+    margin-top: 05rem;
+    align-items: center;
+    text-align: center;
+
+    font-size: 25px;
+}
+
+.container-results {
+    width: 100%;
+    display: block;
+
+}
+
+.buttons-results {
+    background: url(../images/botões.png);
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+    height: 4rem;
+    margin: 0 30%;
+    text-align: center;
+}
+
+.text-results {
+    padding: 2rem;
+}

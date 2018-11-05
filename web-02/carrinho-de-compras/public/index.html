@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <script src="../src/domain/app.js"></script>
+    <script src="../src/domain/NegociacaoController.js"></script>
+    <title>Car Sell</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="cabecalho">
+            <h1 class="titulo">Carrinho de Compras</h1>
+        </header>
+        <form class="formulario">
+            <input class="campos" data-id="descricao" type="text" placeholder="Descrição">
+            <input class="campos" data-quantidade="quantidade" value="1" type="text" placeholder="Quantidade">
+            <input class="campos" data-valor-unitario="valor-unitario" type="text" placeholder="Valor Unitário">
+            <input class="campos" data-data="data" type="date" placeholder="Data">
+
+            <button class="comprar" type="submit">Comprar</button>
+        </form>
+
+        <section class="relatorio">
+            <div class="cabecalho-nf">
+                <p
+                    ">Descrição</p>
+                <p >Quantidade</p>
+                <p >Valor Unitário</p>
+                <p >Valor Total</p>
+            </div>
+            <div class="card-item-nf">
+                <p>Bicicleta Cargueira</p>
+                <p>1</p>
+                <p>R$ 999,99</p>
+                <p>R$ 999,99</p>
+            </div>
+        </section>
+
+        <footer class="total">
+            <p>Total: R$</p>
+            <p>999,99</p>
+        </footer>
+    </div>
+    
+</body>
+</html>
