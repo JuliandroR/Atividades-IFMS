@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>Início</title>
+</head>
+
+<body>
+    <header class="header">
+        <h2 class="title-header">
+            Consumo de Energia
+        </h2>
+    </header>
+    <div class="container_content">
+        <div class="data">
+            <h3 class="description_item">Selecione o tipo de imóvel:</h3>
+            <select id="type_immobile" onchange="definirValor()" class="select">
+                <option></option>
+                <option value="0.54500">Residêncial</option>
+                <option value="0.38151">Rural</option>
+                <option value="0.54500">Industrial</option>
+            </select>
+
+            <h3 class="description_item">Selecione o item:</h3>
+            <select id="type_item" onchange="definirPotencia()" class="select">
+                <option value="000"></option>
+                <option value="">Lâmpada Incandescente</option>
+                <option value="">Lâmpada Fluorescente</option>
+                <option value="">Lâmpada de Led</option>
+                <option value="">Chuveiro</option>
+                <option value="">Geladeira Simples</option>
+                <option value="">Geladeira com Freezer</option>
+                <option value="">Televisão</option>
+                <option value="">Ventilador</option>
+                <option value="">Ar Condicionado</option>
+                <option value="000">Outro</option>
+            </select>
+
+            <input id="input_pot" type="text" class="invisible input" placeholder="Potência desejada">
+
+            <h3 class="description_item">Insira o tempo de utilização em horas:</h3>
+            <input type="text" id="time_used" class="input" placeholder="Tempo Utilizado em Horas">
+
+            <br>
+            <button id="calcular" class="button">Calcular</button>
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
