@@ -17,40 +17,91 @@
             Consumo de Energia
         </h2>
     </header>
-    <div class="container_content">
-        <div class="data">
-            <h3 class="description_item">Selecione o tipo de imóvel:</h3>
-            <select id="type_immobile" onchange="definirValor()" class="select">
-                <option></option>
-                <option value="0.54500">Residêncial</option>
-                <option value="0.38151">Rural</option>
-                <option value="0.54500">Industrial</option>
-            </select>
+    <div class="container">
+        <div class="container_content">
+            <div class="data">
+                <h3 class="description_item">Selecione o tipo de imóvel:</h3>
+                <select id="type_immobile" onchange="definirValor()" class="select">
+                    <option></option>
+                    <option value="0.54500">Residêncial</option>
+                    <option value="0.38151">Rural</option>
+                    <option value="0.54501">Industrial</option>
+                </select>
 
-            <h3 class="description_item">Selecione o item:</h3>
-            <select id="type_item" onchange="definirPotencia()" class="select">
-                <option value="000"></option>
-                <option value="">Lâmpada Incandescente</option>
-                <option value="">Lâmpada Fluorescente</option>
-                <option value="">Lâmpada de Led</option>
-                <option value="">Chuveiro</option>
-                <option value="">Geladeira Simples</option>
-                <option value="">Geladeira com Freezer</option>
-                <option value="">Televisão</option>
-                <option value="">Ventilador</option>
-                <option value="">Ar Condicionado</option>
-                <option value="000">Outro</option>
-            </select>
+                <h3 class="description_item">Selecione o item:</h3>
+                <select id="type_item_home" onchange="definirPotencia('type_item_home')" class="select invisible">
+                    <option value="000"></option>
+                    <option value="0.06">Lâmpada Incandescente de 60 Watts</option>
+                    <option value="0.015">Lâmpada Fluorescente de 15 Watts</option>
+                    <option value="0.008">Lâmpada de Led de 8 Watts</option>
+                    <option value="4.8">Chuveiro</option>
+                    <option value="0.15">Geladeira</option>
+                    <option value="0.3">Geladeira de duas portas</option>
+                    <option value="0.80">Máquina de Lavar</option>
+                    <option value="0.06">Televisão</option>
+                    <option value="0.0288">Ventilador</option>
+                    <option value="1.4">Ar Condicionado 10000 BTU</option>
+                    <option value="0.02">Roteador Wireless</option>
+                    <option value="1.3">Microondas</option>
+                    <option value="1">Ferro de Passar</option>
+                    <option value="1">Aspirador de Pó</option>
+                    <option value="0.25">Computador</option>
+                    <option value="000">Outro</option>
+                </select>
 
-            <input id="input_pot" type="text" class="invisible input" placeholder="Potência desejada">
+                <select id="type_item_rural" onchange="definirPotencia('type_item_rural')" class="select invisible">
+                    <option value="000"></option>
+                    <option value="0.06">Lâmpada Incandescente de 60 Watts</option>
+                    <option value="0.015">Lâmpada Fluorescente de 15 Watts</option>
+                    <option value="0.008">Lâmpada de Led de 8 Watts</option>
+                    <option value="4.8">Chuveiro</option>
+                    <option value="0.15">Geladeira</option>
+                    <option value="0.3">Geladeira de duas portas</option>
+                    <option value="0.80">Máquina de Lavar</option>
+                    <option value="0.06">Televisão</option>
+                    <option value="0.0288">Ventilador</option>
+                    <option value="1.4">Ar Condicionado 10000 BTU</option>
+                    <option value="0.02">Roteador Wireless</option>
+                    <option value="1.3">Microondas</option>
+                    <option value="1">Ferro de Passar</option>
+                    <option value="1">Aspirador de Pó</option>
+                    <option value="0.25">Computador</option>
+                    <option value="0.65">Bomba de Água</option>
+                    <option value="000">Outro</option>
+                </select>
 
-            <h3 class="description_item">Insira o tempo de utilização em horas:</h3>
-            <input type="text" id="time_used" class="input" placeholder="Tempo Utilizado em Horas">
+                <select id="type_item_industrial" onchange="definirPotencia('type_item_industrial')" class="select invisible">
+                    <option value="000"></option>
+                    <option value="0.06">Lâmpada Incandescente de 60 Watts</option>
+                    <option value="0.015">Lâmpada Fluorescente de 15 Watts</option>
+                    <option value="0.008">Lâmpada de Led de 8 Watts</option>
+                    <option value="1.4">Ar Condicionado 10000 BTU</option>
+                    <option value="0.02">Roteador Wireless</option>
+                    <option value="0.25">Computador</option>
+                    <option value="000">Outro</option>
+                </select>
 
-            <br>
-            <button id="calcular" class="button">Calcular</button>
+                <input id="input_pot" type="text" class="invisible input" placeholder="Potência desejada em KhW">
+
+                <h3 class="description_item">Insira o tempo de utilização em horas:</h3>
+                <input type="text" id="time_used" class="input" placeholder="Tempo Utilizado em Horas">
+
+                <br>
+                <button id="calcular" class="button">Calcular</button>
+            </div>
+        </div>
+
+        <div class="itens" id="retorno">
+            <h3 class="title-content">
+                Produtos Selecionados
+            </h3>
+            <!--Aqui ficam os objetos selecionados-->
         </div>
     </div>
+
+    <footer class="footer">
+        R$: <span id="resultado" class="resultado">0.0</span>
+    </footer>
 
     <script src="scripts/index.js"></script>
 </body>
