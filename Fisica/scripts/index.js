@@ -11,16 +11,22 @@ function definirValor(){
         adicionaClassInvisible('type_item_rural')
         adicionaClassInvisible('input_pot')
         removeClassInvisible('type_item_home');
+        remover_todos("retorno");
+        altera_total(0.0);
     }else if(valorKhw == 0.38151){
         adicionaClassInvisible('type_item_home')
         adicionaClassInvisible('type_item_industrial')
         removeClassInvisible('type_item_rural');
         adicionaClassInvisible('input_pot')
+        remover_todos("retorno");
+        altera_total(0.0);
     }else if(valorKhw == 0.54501){
         adicionaClassInvisible('type_item_home')
         adicionaClassInvisible('input_pot')
         adicionaClassInvisible('type_item_rural')
         removeClassInvisible('type_item_industrial');
+        remover_todos("retorno");
+        altera_total(0.0);
     }else{}
 }
 
@@ -30,7 +36,9 @@ function definirPotencia(elemento){
         removeClassInvisible('input_pot');
         validaty = false;
     }else{
-        potencia = parseFloat(pot);    
+        potencia = parseFloat(pot);  
+        adicionaClassInvisible('input_pot')  
+        validaty = true;
     }
 }
 
@@ -61,10 +69,17 @@ function adicionaClassInvisible(elemento){
 
 function retornaHtml(potencia, tempo, custo) {
     var pNova = document.createElement('p');
-    var addc = document.createTextNode(`A potência do produto em KhW é: ${potencia}. Foi utilizado por: ${tempo} horas. O custo foi: R$ ${custo}`);
+    var addc = document.createTextNode(`O consumo do produto em KhW é: ${potencia}. Foi utilizado por: ${tempo} horas. O custo foi: R$ ${custo}`);
     pNova.appendChild(addc);
     var div = document.getElementById('retorno')
     div.appendChild(pNova)
+}
+
+function remover_todos(elemento) {
+    var elemento = document.getElementById(elemento);
+    while (elemento.firstChild) {
+            elemento.removeChild(elemento.firstChild);
+    }
 }
 
 function altera_total(valor){
