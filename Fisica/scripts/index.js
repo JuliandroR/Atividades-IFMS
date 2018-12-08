@@ -13,6 +13,7 @@ function definirValor(){
         removeClassInvisible('type_item_home');
         remover_todos("retorno");
         altera_total(0.0);
+        result_final = 0.0;
     }else if(valorKhw == 0.38151){
         adicionaClassInvisible('type_item_home')
         adicionaClassInvisible('type_item_industrial')
@@ -20,6 +21,7 @@ function definirValor(){
         adicionaClassInvisible('input_pot')
         remover_todos("retorno");
         altera_total(0.0);
+        result_final = 0.0;
     }else if(valorKhw == 0.54501){
         adicionaClassInvisible('type_item_home')
         adicionaClassInvisible('input_pot')
@@ -27,6 +29,7 @@ function definirValor(){
         removeClassInvisible('type_item_industrial');
         remover_todos("retorno");
         altera_total(0.0);
+        result_final = 0.0;
     }else{}
 }
 
