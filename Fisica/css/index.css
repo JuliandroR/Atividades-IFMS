@@ -49,12 +49,13 @@ body {
 }
 
 .description_item {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    margin: 0.3em auto
 }
 
 .select, .input {
     width: 25vw;
-    height: 5vh;
+    height: 4.5vh;
     text-align: center;
     background: rgba(29, 29, 29, 0.8);
     border-radius: 5px;

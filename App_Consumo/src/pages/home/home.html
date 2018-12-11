@@ -1,0 +1,101 @@
+<ion-header class="itens">
+  <ion-navbar class="itens">
+    <ion-title>
+      <i class="fas fa-plug"></i>
+      Consumo de Energia
+      <i class="fas fa-plug"></i>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="body">
+      <ion-label class="title">Dados do Consumo</ion-label> 
+      <ion-item>
+        <ion-label>Tipo do Imóvel:</ion-label>
+        <ion-select interface="action-sheet" id="type_immobile" (ionChange)='definirTarifa($event)'>
+          <ion-option value="0.54500">Residêncial</ion-option>
+          <ion-option value="0.38151">Rural</ion-option>
+          <ion-option value="0.54501">Industrial</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item id="residencial" class="invisible">
+        <ion-label>Selecione o item</ion-label>
+        <ion-select interface="action-sheet" (ionChange)='definirConsumo($event)'>
+          <ion-option value="0.06">Lâmpada Incandescente de 60 Watts</ion-option>
+          <ion-option value="0.015">Lâmpada Fluorescente de 15 Watts</ion-option>
+          <ion-option value="0.008">Lâmpada de Led de 8 Watts</ion-option>
+          <ion-option value="4.8">Chuveiro</ion-option>
+          <ion-option value="0.15">Geladeira</ion-option>
+          <ion-option value="0.3">Geladeira de duas portas</ion-option>
+          <ion-option value="0.80">Máquina de Lavar</ion-option>
+          <ion-option value="0.06">Televisão</ion-option>
+          <ion-option value="0.0288">Ventilador</ion-option>
+          <ion-option value="1.4">Ar Condicionado 10000 BTU</ion-option>
+          <ion-option value="0.02">Roteador Wireless</ion-option>
+          <ion-option value="1.3">Microondas</ion-option>
+          <ion-option value="1">Ferro de Passar</ion-option>
+          <ion-option value="1">Aspirador de Pó</ion-option>
+          <ion-option value="0.25">Computador</ion-option>
+          <ion-option value="000">Outro</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item id="rural" class="invisible">
+        <ion-label>Selecione o item</ion-label>
+        <ion-select interface="action-sheet" (ionChange)='definirConsumo($event)'>
+          <ion-option value="0.06">Lâmpada Incandescente de 60 Watts</ion-option>
+          <ion-option value="0.015">Lâmpada Fluorescente de 15 Watts</ion-option>
+          <ion-option value="0.008">Lâmpada de Led de 8 Watts</ion-option>
+          <ion-option value="4.8">Chuveiro</ion-option>
+          <ion-option value="0.15">Geladeira</ion-option>
+          <ion-option value="0.3">Geladeira de duas portas</ion-option>
+          <ion-option value="0.80">Máquina de Lavar</ion-option>
+          <ion-option value="0.06">Televisão</ion-option>
+          <ion-option value="0.0288">Ventilador</ion-option>
+          <ion-option value="1.4">Ar Condicionado 10000 BTU</ion-option>
+          <ion-option value="0.02">Roteador Wireless</ion-option>
+          <ion-option value="1.3">Microondas</ion-option>
+          <ion-option value="1">Ferro de Passar</ion-option>
+          <ion-option value="1">Aspirador de Pó</ion-option>
+          <ion-option value="0.25">Computador</ion-option>
+          <ion-option value="0.65">Bomba de Água</ion-option>
+          <ion-option value="000">Outro</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item id="industrial" class="invisible">
+        <ion-label>Selecione o item</ion-label>
+        <ion-select interface="action-sheet" (ionChange)='definirConsumo($event)'>
+          <ion-option value="0.06">Lâmpada Incandescente de 60 Watts</ion-option>
+          <ion-option value="0.015">Lâmpada Fluorescente de 15 Watts</ion-option>
+          <ion-option value="0.008">Lâmpada de Led de 8 Watts</ion-option>
+          <ion-option value="1.4">Ar Condicionado 10000 BTU</ion-option>
+          <ion-option value="0.02">Roteador Wireless</ion-option>
+          <ion-option value="0.25">Computador</ion-option>
+          <ion-option value="000">Outro</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item id="consumo_insert" class="invisible">
+        <ion-input id="consumo" placeholder="Consumo em KhW" type="number" (ionChange)='setValorConsumoOutro($event)'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input id="tempo" placeholder="Tempo Utilizado" type="number" (ionChange)='setValorTempo($event)'></ion-input>
+      </ion-item>
+
+      <button (click)="definirValor()" class="button" ion-button color="dark">Adicionar</button>
+    
+      <ion-label class="title_slide title">Dados Inseridos</ion-label>
+      <div class="devolutiva" id="inserido">
+        <!-- Aqui vão ficar as inserções -->
+      </div>
+
+</ion-content>
+
+<ion-footer class="itens">
+  <ion-toolbar class="itens">
+    <ion-title>Custo Total R$ <span id="total">0.0</span></ion-title>
+  </ion-toolbar>
+</ion-footer>

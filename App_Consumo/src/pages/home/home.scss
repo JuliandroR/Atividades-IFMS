@@ -1,0 +1,61 @@
+page-home {
+    @import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One');
+    @import url('https://fonts.googleapis.com/css?family=Amaranth');
+
+    .body{
+        // background: rgb(87, 87, 87);
+        background: url('../../assets/imgs/background.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        margin-top: 2vh;
+    }
+
+    .itens{
+        background: rgb(97, 97, 97);
+        color: antiquewhite;
+    }
+    
+    .invisible{
+        display: none;
+    }
+
+
+    .title_slide{
+        margin: 5vh auto;
+    }
+
+    .devolutiva{
+        // margin-top: 10px;
+        // position: fixed;
+        overflow: auto;
+        height: 20em;
+    }
+
+    .devolutiva li{
+        color: rgb(194, 194, 194);
+        font-size: 1.1em;
+    }
+
+    .button{
+        margin: 2vh auto;
+        display: block;
+        border-radius: 5px;
+        border-color: rgb(56, 56, 56);
+    }
+
+    .title{
+        font-family: 'Amaranth', sans-serif;
+        font-size: 2em;
+        margin: 0 auto;
+        text-align: center;
+        color: rgb(211, 211, 211)
+    }
+
+    .devolutiva li{
+        text-align: center;
+        font-family: 'Pathway Gothic One', sans-serif;
+        font-size: 1.2em;
+        margin-top: 0.5em;
+    }
+}
