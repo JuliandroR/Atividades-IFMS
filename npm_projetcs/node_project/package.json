@@ -1,0 +1,22 @@
+{
+  "name": "organizador_tarefas",
+  "version": "1.0.0",
+  "description": "Aplicativo para organização de tarefas escolares",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "author": "Juliandro Rocha",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.13",
+    "mongoose-paginate": "^5.0.3",
+    "require-dir": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
