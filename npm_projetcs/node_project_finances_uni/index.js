@@ -14,6 +14,8 @@ mongoose.connect(
     'mongodb+srv://juliandro:juliandro@cluster0-rfl8k.mongodb.net/test?retryWrites=true',
     { useNewUrlParser: true }
 )
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log(err));
 
 requireDir('./src/models');
 
