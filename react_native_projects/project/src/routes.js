@@ -2,7 +2,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 import Home from './pages/home';
 import NewFinance from './pages/newFinance';
-import updateFinance from './pages/updateFinance';
+import UpdateFinance from './pages/updateFinance';
 
 // export default createStackNavigator(
 // 	{
@@ -24,7 +24,7 @@ export default createAppContainer(
 		{
 			Home: { screen: Home },
 			newFinance: { screen: NewFinance },
-			updateFinance: { screen: updateFinance },
+			updateFinance: { screen: UpdateFinance },
 
 			navigationOptions: () => ({
 				headerStyle: {

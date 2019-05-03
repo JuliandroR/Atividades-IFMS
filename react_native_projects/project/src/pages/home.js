@@ -12,7 +12,7 @@ export default class Home extends Component {
     state = {
         docs: [],
         type: "",
-        value: ""
+        value: "",
     }
 
     componentDidMount() {
@@ -60,12 +60,18 @@ export default class Home extends Component {
                             [
                                 {
                                     text: "Sim", onPress: async () => {
-                                        await api.delete(`/finances/${this._id}`)
+                                        await api.delete(`/finances/${item._id}`)
                                         .then(res => {
-                                            alert("Deu certo!")
+                                            Alert.alert(
+                                                'Sucesso',
+                                                'O item foi excluído com sucesso'
+                                            )
                                         })
                                         .catch(err => {
-                                            alert("Retornou Erro!")
+                                            Alert.alert(
+                                                'Erro',
+                                                'O item não pode ser excluído'
+                                            )
                                         })
                                     }
                                 },
