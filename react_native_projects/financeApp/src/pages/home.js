@@ -46,7 +46,7 @@ export default class Home extends Component {
                 <Text style={styles.value}>R$ {this.value},00</Text>
 
                 <View style={styles.containerOptionsFinance}>
-                    <TouchableOpacity style={styles.financeButton1} onPress={() => {
+                    <TouchableOpacity style={styles.financeButton1} onPress={ async () => {
                         this.props.navigation.navigate("updateFinance", { finance: item });
                     }}>
                         <Text style={styles.financeButtonText}>Editar</Text>
@@ -62,6 +62,7 @@ export default class Home extends Component {
                                     text: "Sim", onPress: async () => {
                                         await api.delete(`/finances/${item._id}`)
                                             .then(res => {
+                                                this.loadFinances();
                                                 Alert.alert(
                                                     'Sucesso',
                                                     'O item foi excluído com sucesso'
@@ -92,6 +93,7 @@ export default class Home extends Component {
     }
 
     render() {
+        this.loadFinances();
         return (
             <View style={styles.container}>
                 <Text style={styles.messageTop}>Sua Trilha de Finanças:</Text>
@@ -102,31 +104,25 @@ export default class Home extends Component {
                     contentContainerStyle={styles.list}
                     extraData={this.state} />
 
-                <View>
+                <View style={styles.containerButtons}>
+                    <TouchableOpacity style={[styles.button]} onPress={() => {
+                        this.props.navigation.navigate("debts");
+                    }}>
+                        <Text style={styles.textButton}>Débitos</Text>
+                    </TouchableOpacity>
 
-                    <Button
-                        onPress={() => {
-                            this.props.navigation.navigate("debts");
-                        }}
-                        title="Débitos"
-                        color="#009F4D"
-                    />
+                    <TouchableOpacity style={[styles.button, styles.new]} onPress={() => {
+                        this.props.navigation.navigate("newFinance");
+                    }}>
+                        {/* <Text style={styles.financeButtonText}>Novo</Text> */}
+                        <Text style={styles.textButtonPlus}>+</Text>
+                    </TouchableOpacity>
 
-                    <Button
-                        onPress={() => {
-                            this.props.navigation.navigate("newFinance");
-                        }}
-                        title="Novo"
-                        color="#009F4D"
-                    />
-
-                    <Button
-                        onPress={() => {
-                            this.props.navigation.navigate("balances");
-                        }}
-                        title="Créditos"
-                        color="#009F4D"
-                    />
+                    <TouchableOpacity style={[styles.button]} onPress={() => {
+                        this.props.navigation.navigate("balances");
+                    }}>
+                        <Text style={styles.textButton}>Créditos</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         );
@@ -216,5 +212,38 @@ const styles = StyleSheet.create({
         fontSize: 14,
         textAlign: "center",
         color: "#183028"
-    }
+    },
+
+    containerButtons: {
+        backgroundColor: '#00A376',
+        flexDirection: 'row',
+        marginBottom: 0,
+    },
+
+    button: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        height: 40,
+        padding: 0,
+    },
+
+    new: {
+        backgroundColor: '#79D97C',
+        flex: 0.35,
+        height: 55,
+        marginTop: -20,
+        borderRadius: 200,
+        paddingTop: -10,
+    },
+
+    textButton: {
+        fontSize: 18,
+        color: '#D9D9D6',
+    },
+
+    textButtonPlus: {
+        fontSize: 32,
+        fontWeight: 'bold',
+    },
 });

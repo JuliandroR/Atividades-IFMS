@@ -25,8 +25,6 @@ export default class UpdateFinance extends Component {
 
         return (
             <View style={styles.newFinanceContainer}>
-                <Text style={styles.titlePage}>Cadastar Nova Finança</Text>
-                <Text>Id:{this.state._id}</Text>
                 <View style={styles.containerInput}>
                     <Text style={styles.descriptionInput}>Tipo:</Text>
                     <Picker
@@ -58,13 +56,14 @@ export default class UpdateFinance extends Component {
                 </View>
                 <TouchableOpacity
                     style={styles.buttonCreate}
-                    onPress={() => {
-                        api.put(`/finances/${this.state._id}`, {
+                    onPress={ async () => {
+                        await api.put(`/finances/${this.state._id}`, {
                             type: this.state.type,
                             title: this.state.title,
                             value: Number(this.state.value)
                         })
                         .then(res => {
+                            
                             Alert.alert(
                                 'Sucesso',
                                 'O item foi alterado com sucesso'
@@ -76,6 +75,7 @@ export default class UpdateFinance extends Component {
                                 'O item não pode ser alterado'
                             )
                         })
+                        this.props.navigation.navigate("Home");
                     }}>
                     <Text style={styles.buttonCreateText}>Cadastrar</Text>
                 </TouchableOpacity>

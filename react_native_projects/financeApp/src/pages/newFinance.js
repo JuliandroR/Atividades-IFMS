@@ -51,8 +51,8 @@ export default class NewFinance extends Component {
                 </View>
                 <TouchableOpacity 
                 style={styles.buttonCreate}
-                onPress={() => {
-                        api.post('/finances', {
+                onPress={ async () => {
+                        await api.post('/finances', {
                             type: this.state.type,
                             title: this.state.title,
                             value: Number(this.state.value)
@@ -69,6 +69,8 @@ export default class NewFinance extends Component {
                                 'O item não pode ser cadastrado'
                             )
                         })
+
+                        this.props.navigation.navigate("Home");
                 }}>
                     <Text style={styles.buttonCreateText}>Cadastrar</Text>
                 </TouchableOpacity>
