@@ -9,19 +9,24 @@ export default class UpdateFinance extends Component {
         title: "Alterar Finança"
     };
 
+    constructor(props) {
+        super(props);
+        this.routeParams = props.navigation.state.params;
+        this.state = {
+            _id : this.routeParams.finance._id,
+            type: this.routeParams.finance.type,
+            title: this.routeParams.finance.title,
+            value: (this.routeParams.finance.value).toString(),
+        };
+    }
+
 
     render() {
-        const { navigation } = this.props;
-
-        state = {
-            type: "",
-            title: navigation.state.params.finance.title,
-            value: ""
-        }
 
         return (
             <View style={styles.newFinanceContainer}>
-            <Text style={styles.titlePage}>Cadastar Nova Finança</Text>
+                <Text style={styles.titlePage}>Cadastar Nova Finança</Text>
+                <Text>Id:{this.state._id}</Text>
                 <View style={styles.containerInput}>
                     <Text style={styles.descriptionInput}>Tipo:</Text>
                     <Picker
@@ -51,17 +56,27 @@ export default class UpdateFinance extends Component {
                         value={this.state.value}
                     />
                 </View>
-                <TouchableOpacity 
-                style={styles.buttonCreate}
-                onPress={() => {
-                        api.post('/finances', {
+                <TouchableOpacity
+                    style={styles.buttonCreate}
+                    onPress={() => {
+                        api.put(`/finances/${this.state._id}`, {
                             type: this.state.type,
                             title: this.state.title,
                             value: Number(this.state.value)
                         })
-                        
-                    alert("Cadastrado!")
-                }}>
+                        .then(res => {
+                            Alert.alert(
+                                'Sucesso',
+                                'O item foi alterado com sucesso'
+                            )
+                        })
+                        .catch(err => {
+                            Alert.alert(
+                                'Erro',
+                                'O item não pode ser alterado'
+                            )
+                        })
+                    }}>
                     <Text style={styles.buttonCreateText}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>

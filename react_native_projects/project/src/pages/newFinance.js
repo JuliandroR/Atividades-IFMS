@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { StyleSheet, Text, View, Picker, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Picker, TextInput, TouchableOpacity, Alert } from 'react-native';
 
 import api from '../services/api';
 
@@ -10,7 +10,7 @@ export default class NewFinance extends Component {
     };
 
     state = {
-        type: "",
+        type: "balances",
         title: "",
         value: ""
     }
@@ -57,8 +57,18 @@ export default class NewFinance extends Component {
                             title: this.state.title,
                             value: Number(this.state.value)
                         })
-                        
-                    alert("Cadastrado!")
+                        .then(res => {
+                            Alert.alert(
+                                'Sucesso',
+                                'O item foi cadastrado com sucesso'
+                            )
+                        })
+                        .catch(err => {
+                            Alert.alert(
+                                'Erro',
+                                'O item não pode ser cadastrado'
+                            )
+                        })
                 }}>
                     <Text style={styles.buttonCreateText}>Cadastrar</Text>
                 </TouchableOpacity>
