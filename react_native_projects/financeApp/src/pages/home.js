@@ -230,9 +230,10 @@ const styles = StyleSheet.create({
 
     new: {
         backgroundColor: '#79D97C',
-        flex: 0.35,
-        height: 55,
-        marginTop: -20,
+        flex: 0.3,
+        // width: 55,
+        height: 54,
+        marginTop: -18,
         borderRadius: 200,
         paddingTop: -10,
     },
