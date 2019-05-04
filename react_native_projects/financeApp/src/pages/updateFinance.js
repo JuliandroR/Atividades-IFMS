@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { StyleSheet, Text, View, Picker, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Picker, TextInput, TouchableOpacity, Alert } from 'react-native';
 
 import api from '../services/api';
 

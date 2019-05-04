@@ -9,6 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+let port = process.env.PORT || 3000
+
 // Iniciando o DB
 mongoose.connect(
     'mongodb+srv://juliandro:juliandro@cluster0-rfl8k.mongodb.net/test?retryWrites=true',
@@ -22,4 +24,6 @@ requireDir('./src/models');
 // rotas
 app.use('/api', require('./src/routes'))
 
-app.listen(3000);
+app.listen(port, () => {
+	console.log('Operando em http://localhost:' + port);
+});

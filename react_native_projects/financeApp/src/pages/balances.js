@@ -4,9 +4,9 @@ import api from '../services/api';
 
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Button, Alert } from 'react-native';
 
-export default class Home extends Component {
+export default class Balances extends Component {
     static navigationOptions = {
-        title: "Finance App"
+        title: "Créditos"
     };
 
     state = {
@@ -20,7 +20,7 @@ export default class Home extends Component {
     }
 
     loadFinances = async () => {
-        const response = await api.get('/finances');
+        const response = await api.get('/finances/balances');
 
         const docs = response.data;
 
@@ -32,16 +32,13 @@ export default class Home extends Component {
     renderItem = ({ item }) => {
 
         if (item.type == "balances") {
-            this.type = "Crédito"
             this.value = `${item.value}`
         } else if (item.type == "debts") {
-            this.type = "Débito"
             this.value = `-${item.value}`
         }
 
         return (
             <View style={styles.finaceContainer}>
-                <Text style={styles.type}>{this.type}</Text>
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.value}>R$ {this.value},00</Text>
 
@@ -61,18 +58,18 @@ export default class Home extends Component {
                                 {
                                     text: "Sim", onPress: async () => {
                                         await api.delete(`/finances/${item._id}`)
-                                        .then(res => {
-                                            Alert.alert(
-                                                'Sucesso',
-                                                'O item foi excluído com sucesso'
-                                            )
-                                        })
-                                        .catch(err => {
-                                            Alert.alert(
-                                                'Erro',
-                                                'O item não pode ser excluído'
-                                            )
-                                        })
+                                            .then(res => {
+                                                Alert.alert(
+                                                    'Sucesso',
+                                                    'O item foi excluído com sucesso'
+                                                )
+                                            })
+                                            .catch(err => {
+                                                Alert.alert(
+                                                    'Erro',
+                                                    'O item não pode ser excluído'
+                                                )
+                                            })
                                     }
                                 },
                                 {
@@ -99,16 +96,9 @@ export default class Home extends Component {
                     data={this.state.docs}
                     keyExtractor={item => item._id}
                     renderItem={this.renderItem}
-                    contentContainerStyle={styles.list} 
-                    extraData={this.state}/>
+                    contentContainerStyle={styles.list}
+                    extraData={this.state} />
 
-                <Button
-                    onPress={() => {
-                        this.props.navigation.navigate("newFinance");
-                    }}
-                    title="Novo"
-                    color="#009F4D"
-                />
             </View>
         );
     }
