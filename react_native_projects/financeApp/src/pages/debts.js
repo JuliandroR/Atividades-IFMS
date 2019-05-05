@@ -4,7 +4,7 @@ import api from '../services/api';
 
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Button, Alert } from 'react-native';
 
-export default class Debts extends Component {
+export default class Home extends Component {
     static navigationOptions = {
         title: "Débitos"
     };
@@ -13,6 +13,8 @@ export default class Debts extends Component {
         docs: [],
         type: "",
         value: "",
+        debts: 0,
+        balances: 0,
     }
 
     componentDidMount() {
@@ -31,19 +33,13 @@ export default class Debts extends Component {
 
     renderItem = ({ item }) => {
 
-        if (item.type == "balances") {
-            this.value = `${item.value}`
-        } else if (item.type == "debts") {
-            this.value = `-${item.value}`
-        }
-
         return (
             <View style={styles.finaceContainer}>
                 <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.value}>R$ {this.value},00</Text>
+                <Text style={styles.value}>R$ -{item.value},00</Text>
 
                 <View style={styles.containerOptionsFinance}>
-                    <TouchableOpacity style={styles.financeButton1} onPress={() => {
+                    <TouchableOpacity style={styles.financeButton1} onPress={async () => {
                         this.props.navigation.navigate("updateFinance", { finance: item });
                     }}>
                         <Text style={styles.financeButtonText}>Editar</Text>
@@ -59,6 +55,7 @@ export default class Debts extends Component {
                                     text: "Sim", onPress: async () => {
                                         await api.delete(`/finances/${item._id}`)
                                             .then(res => {
+                                                this.loadFinances();
                                                 Alert.alert(
                                                     'Sucesso',
                                                     'O item foi excluído com sucesso'
@@ -89,16 +86,15 @@ export default class Debts extends Component {
     }
 
     render() {
+        this.loadFinances();
         return (
             <View style={styles.container}>
-                <Text style={styles.messageTop}>Sua Trilha de Finanças:</Text>
                 <FlatList
                     data={this.state.docs}
                     keyExtractor={item => item._id}
                     renderItem={this.renderItem}
                     contentContainerStyle={styles.list}
                     extraData={this.state} />
-
             </View>
         );
     }
@@ -187,5 +183,39 @@ const styles = StyleSheet.create({
         fontSize: 14,
         textAlign: "center",
         color: "#183028"
-    }
+    },
+
+    containerButtons: {
+        backgroundColor: '#00A376',
+        flexDirection: 'row',
+        marginBottom: 0,
+    },
+
+    button: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        height: 40,
+        padding: 0,
+    },
+
+    new: {
+        backgroundColor: '#79D97C',
+        flex: 0.3,
+        // width: 55,
+        height: 45,
+        marginTop: -7.5,
+        borderRadius: 5,
+        paddingTop: -10,
+    },
+
+    textButton: {
+        fontSize: 18,
+        color: '#D9D9D6',
+    },
+
+    textButtonPlus: {
+        fontSize: 32,
+        fontWeight: 'bold',
+    },
 });

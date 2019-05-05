@@ -13,6 +13,8 @@ export default class Home extends Component {
         docs: [],
         type: "",
         value: "",
+        debts: 0,
+        balances: 0,
     }
 
     componentDidMount() {
@@ -232,9 +234,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#79D97C',
         flex: 0.3,
         // width: 55,
-        height: 54,
-        marginTop: -18,
-        borderRadius: 200,
+        height: 45,
+        marginTop: -7.5,
+        borderRadius: 5,
         paddingTop: -10,
     },
 
