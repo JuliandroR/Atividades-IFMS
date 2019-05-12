@@ -6,21 +6,36 @@ import UpdateFinance from './pages/updateFinance';
 import Debts from './pages/debts';
 import Balances from './pages/balances';
 
+const defaultStyle = {
+	headerStyle: {
+		backgroundColor: '#00A376'
+	},
+	headerTintColor: '#D9D9D6'
+}
+
 export default createAppContainer(
 	createStackNavigator(
 		{
-			Home: { screen: Home },
-			newFinance: { screen: NewFinance },
-			updateFinance: { screen: UpdateFinance },
-			debts: { screen: Debts },
-			balances: { screen: Balances },
-
-			navigationOptions: () => ({
-				headerStyle: {
-					backgroundColor: '#79D97C'
-				},
-				headerTintColor: '#79D97C'
-			})
+			Home: {
+				screen: Home,
+				navigationOptions: () => defaultStyle
+			},
+			newFinance: {
+				screen: NewFinance,
+				navigationOptions: () => defaultStyle
+			},
+			updateFinance: {
+				screen: UpdateFinance,
+				navigationOptions: () => defaultStyle
+			},
+			debts: {
+				screen: Debts,
+				navigationOptions: () => defaultStyle
+			},
+			balances: {
+				screen: Balances,
+				navigationOptions: () => defaultStyle
+			},
 		}
 	)
 )
