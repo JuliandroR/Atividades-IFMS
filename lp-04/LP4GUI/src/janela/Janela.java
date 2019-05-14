@@ -43,7 +43,7 @@ public class Janela extends JFrame {
             setSize(j.width, t.height);
         }
         
-        setLocation((t.width - j.width) / 2, (t.height - j.height));
+        setLocation(((t.width - j.width) / 2), ((t.height - j.height) / 2));
     }
     
     public static void main(String[] args){
