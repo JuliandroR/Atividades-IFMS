@@ -49,7 +49,7 @@ public class Rotulo extends Janela{
         label3.setBackground(Color.BLUE);
         label3.setForeground(Color.RED);
         label2.setFont(new Font("Courrier", Font.BOLD, 21));
-        label3.setHorizontalAlignment(SwingConstants.BOTTOM);
+        label3.setVerticalAlignment(SwingConstants.BOTTOM);
         label3.setHorizontalTextPosition(SwingConstants.LEFT);
         label3.setVerticalTextPosition(SwingConstants.CENTER);
         
