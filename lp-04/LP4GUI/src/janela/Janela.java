@@ -24,7 +24,7 @@ public class Janela extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
         getContentPane().setLayout(null);
-        getContentPane().setBackground(new Color(200, 230, 200));
+        getContentPane().setBackground(new Color(178, 180, 178));
         
         Image ico;
         ico = Toolkit.getDefaultToolkit().getImage("icone.png");
